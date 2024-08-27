@@ -1,4 +1,10 @@
-# Linux Interview Questions
+# $${\color{blue}Linux\ Interview\ Questions}$$
+
+
+<p align="right">  Shreyas Mane</p>
+
+----------------------------------------------------------------------------------------------------------------
+
 The following 15 Linux interview questions are suitable for freshers because these 
 questions will have basic information about Linux.
 
@@ -173,7 +179,7 @@ Output and input in Linux OS are divided into three standard streams:
 Under Linux, these standard streams channel communication of output and input 
 between programs and their environment.
 
-## Intermediate-Level Linux Interview Questions
+## $${\color{blue}Intermediate-Level\ Linux\ Interview\ Questions:}$$
 
 The next 15 questions are the best suitable for those who have an intermediate level 
 of experience in Linux:
@@ -469,7 +475,7 @@ compatibility and availability.
 
 •Sometimes users face driver and firmware-related issues.
 
-## Advanced-Level Linux Interview Questions
+## $${\color{blue}Advanced-Level\ Linux\ Interview\ Questions:}$$
 
 These 15 questions will revolve around your experience and help you in preparing for 
 the advanced-level Linux interview:
@@ -696,6 +702,7 @@ LVM is a powerful utility for disk management where you need dynamic storage
 allocations.
 
 **44. What is the difference between UDP and TCP?**
+
 The following table shows the difference between UDP and TCP:
 
 
@@ -718,7 +725,7 @@ domains, and configure the resolver options.
 Absolute path = It specifies the exact location of a file or directory from the root 
 directory (“/”). We will notice that they always start with a forward slash (“/”).
 
-For Example: `/home/user/jayesh/geeksforgeeks.txt`
+For Example: `/home/user/shree/geeksforgeeks.txt`
 
 Relative paths = It specifies the location relative to the current working directory. In 
 this we do not start with a forward slash (“/”).
@@ -816,9 +823,9 @@ system startup and shutdown. The default runlevel is often set to a multi-user m
 with a GUI (runlevel 5). Runlevel 3 is commonly used for a multi-user mode without a 
 GUI.
 
-## Bonus Linux Interview Questions
+## $${\color{blue}Bonus\ Linux\ Interview\ Questions:\}$$
 
-The next 5 Linux interview questions are the most common ones recruiters ask.
+The next 16 Linux interview questions are the most common ones recruiters ask.
 
 **55. What is sudo in Linux?**
 
@@ -1013,7 +1020,7 @@ based on the search results.
 •The tee command reads standard input and copies it to both standard 
 outputs and to one or more files.
 
-## Linux Admin Interview Questions
+## $${\color{blue}Linux\ Admin\ Interview\ Questions:}$$
 
 **71.How are files organized in Linux?**
 
@@ -1053,7 +1060,7 @@ Possible troubleshooting steps include checking network connectivity using tools
 ‘ping’, verifying firewall rules, checking DNS settings, and examining relevant log 
 files for error messages.
 
-## Linux Troubleshooting Interview Questions:
+## $${\color{blue}Linux\ Troubleshooting\ Interview\ Questions:}$$
 
 **78.What steps would you take to fix a network connectivity issue in Linux?**
 
@@ -1097,7 +1104,7 @@ Troubleshooting steps might include checking hardware connections, verifying
 BIOS/UEFI settings, booting into a recovery mode or live system, analyzing boot 
 logs, and diagnosing disk or file system errors.
 
-## Linux Networking Interview Questions:
+##  $${\color{blue} Linux\ Networking\ Interview\ Questions:}$$
 
 **85.What does the ‘ifconfig’ command do in Linux?**
 
