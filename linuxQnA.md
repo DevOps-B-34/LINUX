@@ -10,6 +10,7 @@ and mainframes and is also supported on major computer platforms such as ARM,
 x86, and SPARC.
 
 **2. Explain the basic features of the Linux OS.**
+
 Some basic features of Linux are:
 
 •Linux is free and easily available.
@@ -64,127 +65,193 @@ Here's a comparison of the major differences between Linux and Windows:
 This table outlines some of the core differences between Linux and Windows, highlighting their strengths and weaknesses in different areas.
 
 **5. Define the basic components of Linux.**
+
 Majorly there are five basic components of Linux:
+
 •Kernel: Linux kernel is a core part of the operating system that works as a 
 bridge between hardware and software.
+
 •Shell: Shell is an interface between a kernel and a user.
+
 •GUI: Offers different way to interact with the system, known as the graphical 
 user interface (GUI).
+
 •Application programs: It is designed to perform a bundle of tasks through a 
 bundle of functions.
+
 •System Utilities: It is the software functions through which users manage the 
 system.
-7. Elaborate all the file permission in Linux.
+
+**6. Elaborate all the file permission in Linux.**
+
 There are three types of file permissions in Linux:
+
 •Read: Users open and read files with this permission.
+
 •Write: Users can open and modify the files.
+
 •Execute: Users can run the file.
-8. What is the Linux Kernel? Is it legal to edit it?
+
+**7. What is the Linux Kernel? Is it legal to edit it?**
+
 It is known as a low-level software system. TheLinux kernel tracks the resources and 
 provides a user interface. This OS is released under GPL (General Public License). 
 Hence every project is released under it. So, you can edit the Linux kernel legally.
-9. Explain LILO
+
+**8. Explain LILO**
+
 LILO, i.e., Linux Loader and is a Linux Boot loader. It loads the Linux operating system 
 into memory and starts the execution. Most operating systems like Windows and 
 macOS come with a bootloader. While in Linux, you need to install a separate boot 
 loader, and LILO is one of the Linux boot loaders.
-10. What is Shell in Linux?
+
+**9. What is Shell in Linux?**
+
 In Linux, five Shells are used:
+
 •csh (C Shell): This shell offers job control and spell checking and is similar to 
 C syntax.]
+
 •ksh (Korn Shell): A high-level shell for programming languages.
+
 •ssh (Z Shell): This shell has a unique nature, such as closing comments, 
+
 startup files, file name generating, and observing logout/login watching.
+
 •bash (Bourne Again Shell): This is the default shell for Linux.
-•Fish (Friendly Interactive Shell): This shell provides auto-suggestion, webbased configuration, etc.
-11. What is a root account?
+
+•Fish (Friendly Interactive Shell): This shell provides auto-suggestion, web based configuration, etc.
+
+**10. What is a root account?**
+
 The root is like the user’s name or system administrator account in Linux. The root 
 account provides complete system control, which an ordinary user cannot do.
-12. Describe CLI and GUI in Linux.
+
+**11. Describe CLI and GUI in Linux.**
+
 CLI, i.e., command line interface. It takes input as a command and runs the tasks of 
 the system. The term GUI refers to the Graphical User Interface or the humancomputer interface. It uses icons, images, menus, and windows, which can be 
 manipulated through the mouse.
-13. What is Swap Space?
+
+**12. What is Swap Space?**
+
 Linux uses swap space to expand RAM. Linux uses this extra space to hold 
 concurrently running programs temporarily.
-14. What is the difference between hard links and soft links?
+
+**13. What is the difference between hard links and soft links?**
+
 Here is the table that shows the difference between soft links and hard links:
-Hard Links Soft Links
-It includes original content. It includes the original file location.
-Hard links are faster as 
-compared to soft links. Soft links are slower.
-It shares similar inode numbers. It shares different inode numbers.
-There is no relative path for hard 
-links. Relative paths are used for soft links.
-It didn’t link the directories. It links the directories.
-Any change in this link reflects 
-other files directly.
-Every change in this link reflects its hard link 
-and the actual file directly.
-It uses less memory. It uses more memory.
-15. How do users create a symbolic link in Linux?
+
+| **Hard Links**                                                      | **Soft Links**                                                      |
+|---------------------------------------------------------------------|----------------------------------------------------------------------|
+| It includes the original content.                                   | It includes the original file location.                              |
+| Hard links are faster compared to soft links.                       | Soft links are slower.                                               |
+| It shares similar inode numbers.                                    | It shares different inode numbers.                                   |
+| There is no relative path for hard links.                           | Relative paths are used for soft links.                              |
+| It doesn’t link directories.                                        | It links directories.                                                |
+| Any change in this link reflects other files directly.              | Every change in this link reflects its hard link and the actual file directly. |
+| It uses less memory.                                                | It uses more memory.                                                 |
+
+**14. How do users create a symbolic link in Linux?**
+
 Symbolic links, symlink, or soft links are shortcuts to files and directories. Users can 
 create the symbolic link in Linux through the’ ln’ command. The general command to 
 create a symbolic link is as follows:
+
 ln -s <existing_source file> <optional_symbolic link>
-16. What do you understand about the standard streams?
+
+**15. What do you understand about the standard streams?**
+
 Output and input in Linux OS are divided into three standard streams:
+
 •Stdin (standard input)
+
 •stdout(standard output)
+
 •stderr (standard error)
+
 Under Linux, these standard streams channel communication of output and input 
 between programs and their environment.
-Intermediate-Level Linux Interview Questions
+
+## Intermediate-Level Linux Interview Questions
+
 The next 15 questions are the best suitable for those who have an intermediate level 
 of experience in Linux:
-17. How do you mount and unmount filesystems in Linux?
+
+**16. How do you mount and unmount filesystems in Linux?**
+
 In this case, you can use the ‘mount’ and ‘umount’ commands.
 For mounting:
+
 •First, identify the partition through the fdisk -l command. You can also use the 
 lsblk command for it.
+
 •After identifying the partition, create the directory which will work as the mount 
 point. For example, running the mkdir /mnt/mountpnt will create the 
 mountpnt directory as the mount point.
+
 •Finally, you can run sudo mount <partition> <mount_point_directory> to 
+
 complete the mounting.
+
 For Unmounting:
+
 Once you check if the specific filesystem is in use, you can run the `sudo umount 
 <mount_point_directory>` for unmounting. If you want to learn more about the mount 
 command in Linux.
-18. How do you troubleshoot network connectivity issues in Linux?
+
+**17. How do you troubleshoot network connectivity issues in Linux?**
+
 There are multiple ways to troubleshoot the network connectivity and find the issue 
 correctly:
+
 Check the Internet Connectivity:
+
 First of all, please check if the internet connection option is on and also check the 
 cables to find if there is any issue with it.
+
 Verify the Network Configuration:
+
 •Please check that your network is configured correctly and the network 
 interface has your IP address. You can check it by running the ip addr or 
 ifconfig commands.
+
 •You can also run the ip route command to check if the default gateway is set 
 properly.
+
 •Finally, verify the DNS server configuration in the /etc/resolv.conf file.
+
 Check the Firewall:
+
 Sometimes, firewall rules block the internet connection for the system’s security. 
 Hence, you can run the ufw or iptables command to modify the firewall rules.
+
 Network Interface:
+
 You can restart your network interface through the ifup and ifdown commands. Once 
 you restart the network interface, please reboot the system to make changes 
 successful.
-19. How do you list all the processes running in Linux?
+
+**18. How do you list all the processes running in Linux?**
+
 You can list the currently running process in Linux through various commands such 
 as:
+
 ps Command:
 The ps command displays brief information about the running processes. You can use 
 the ps -f or ps -f command because the -f option shows the full-format result, and the 
 -e option displays all processes. Moreover, you can use the ps auxf command to get 
 a detailed list of processes.
+
 top and htop Command:
+
 •The top command displays the real-time details about the system process and 
 the complete resource usage.
+
 •The htop command is the improved version of the top command because it 
 displays the color-coded list with additional features such as sorting, 
 filtering, sorting, etc.
+
 20. What is the chmod command in Linux, and how do you use it?
 You can use the chmod command to change the file permissions of the directories. It 
 offers a simple way to control the read and write permissions. For instance, if you want 
