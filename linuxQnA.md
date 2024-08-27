@@ -130,7 +130,7 @@ account provides complete system control, which an ordinary user cannot do.
 **11. Describe CLI and GUI in Linux.**
 
 CLI, i.e., command line interface. It takes input as a command and runs the tasks of 
-the system. The term GUI refers to the Graphical User Interface or the humancomputer interface. It uses icons, images, menus, and windows, which can be 
+the system. The term GUI refers to the Graphical User Interface or the human computer interface. It uses icons, images, menus, and windows, which can be 
 manipulated through the mouse.
 
 **12. What is Swap Space?**
@@ -631,20 +631,22 @@ The iptables configuration uses the predefined set of chains to process the netw
 packages at different stages. So you can define rules to these chains for 
 manipulating the network packets:
 
-iptables -A <chain> <options> -j <target>
+iptables -A  <chain>  <options> -j  <target>
 
 In the above command:
 
-•<chain>: Specifies the chain where you want to define a new rule.
+• <chain> : Specifies the chain where you want to define a new rule.
 
-•<options>: Defines the conditions for the rule, like ports, protocols, etc.
+• <options> : Defines the conditions for the rule, like ports, protocols, etc.
 
-• -j <target>: Defines the target action when the packet matches the rule.
+• -j <target> : Defines the target action when the packet matches the rule.
 
 By default, iptables rules get automatically removed after the system reboot, but you 
 can use the following command to make the rules persistent:
 
 iptables-save > /etc/iptables/rules.v4
+
+(check the file code for this question)
 
 **40. How do you troubleshoot a Linux OS that fails to boot?**
 
@@ -705,293 +707,435 @@ The following table shows the difference between UDP and TCP:
 | **Applications**      | Video/voice conferencing, DNS, online gaming, streaming media, etc.     | File transfers, email, web browsing, database transactions, etc.                         |
 
 
-45. What is /etc/resolv.conf file
+**45. What is /etc/resolv.conf file?**
+
 The /etc/resolv.conf is the config file used for the DNS server resolution process. 
 This config file is used to specify the DNS server, set up the search directive for 
 domains, and configure the resolver options.
-46. What is the difference between absolute and relative paths in 
-Linux?
+
+**46. What is the difference between absolute and relative paths in Linux?**
+
 Absolute path = It specifies the exact location of a file or directory from the root 
 directory (“/”). We will notice that they always start with a forward slash (“/”).
+
 For Example: `/home/user/jayesh/geeksforgeeks.txt`
+
 Relative paths = It specifies the location relative to the current working directory. In 
 this we do not start with a forward slash (“/”).
+
 For Example: `documents/file.txt`
-47. What is the grep command used for in Linux?
+
+**47. What is the grep command used for in Linux?**
+
 The grep command is used to search for specific patterns within files or input 
 streams. It allows us to find and print lines that we give to match the pattern.
+
 For example: If we want to search `test` in a text file name “file.txt”. We use the 
 following command
+
 grep "test" file.txt
+
 This command will search for the word `test` in the file named “file.txt” and print the 
 matching lines.
-48. How do you check the status of a service or daemon in Linux?
+
+**48. How do you check the status of a service or daemon in Linux?**
+
 To check the status of a service or daemon, we can use the `systemctl` command 
 followed by the service name.
+
 For example: If we want to display the status of the Apache Web server. We use the 
 following command.
+
 systemctl status apache2
+
 It will show whether the service is running, stopped, or in an error state.
-49. What is the difference between /etc/passwd and /etc/shadow files?
+
+**49. What is the difference between /etc/passwd and /etc/shadow files?**
+
 The /etc/passwd file stores essential user information like usernames, user IDs, 
 home directories, and default shells. Each line in the file represents a user account.
+
 The /etc/shadow file contains encrypted passwords and other security-related 
 information. It is only accessible by the root user or privileged processes
-50. How do you compress and decompress files in Linux?
+
+**50. How do you compress and decompress files in Linux?**
+
 To compress files in Linux, you can use the tar command along with gzip 
 compression.
-For example: If we want to create a file name “jayesh” with gzip compression. We 
+
+For example: If we want to create a file name “shree” with gzip compression. We 
 use the following command.
-tar -czvf jayesh.tar.gz files
+
+tar -czvf shree.tar.gz files
+
 This command will create a compressed archive file containg the specified “files”
 To decompress the same, we use the following command.
-tar -xzvf jayesh.tar.gz
-51. What is the difference between a process and a daemon in Linux?
+
+tar -xzvf shree.tar.gz
+
+**51. What is the difference between a process and a daemon in Linux?**
+
 A process is an executing instance of a program. It can be a foreground process that 
 interacts with the user or a background process started by a user or another 
 process.
+
 A daemon is a background process that runs independently of user sessions. It is 
 typically started at system boot time and performs system tasks or provides services. 
 Daemons often have no user interaction and continue running even when users log 
 out.
-52. How do you schedule recurring tasks in Linux?
+
+**52. How do you schedule recurring tasks in Linux?**
+
 We can use `crontab` command for performing recurring tasks in Linux. By adding 
 entries to the crontab file, we can specify when and how frequently a command or 
 script should be executed
+
 For Example: If we want to execute a script name “geeks.sh” every day at 3:30 AM. 
 We use the following command.
+
 crontab -e
+
 This command opens the crontab file in an editor.
 30 3 * * * /path/to/geeks.sh
-53. What is the sed command used for in Linux?
+
+**53. What is the sed command used for in Linux?**
+
 The sed command is used to perform text transformations on files. It can search for 
 specific patterns and replace them with desired text.
+
 For Example:
+
 sed `s/foo/bar/g` file.txt
+
 This command replaces all occurrences of “foo” with “bar” in the file name “file.txt”
-54. What are runlevels in Linux?
+
+**54. What are runlevels in Linux?**
+
 Runlevels in Linux define different system states, such as single-user mode or multiuser mode with or without a GUI. They determine which services start or stop during 
 system startup and shutdown. The default runlevel is often set to a multi-user mode 
 with a GUI (runlevel 5). Runlevel 3 is commonly used for a multi-user mode without a 
 GUI.
-Bonus Linux Interview Questions
+
+## Bonus Linux Interview Questions
+
 The next 5 Linux interview questions are the most common ones recruiters ask.
-55. What is sudo in Linux?
+
+**55. What is sudo in Linux?**
+
 The word “sudo” is the short form of “Superuser Do” that allows you to run the 
 command with system privileges. With this command, you can get the system’s 
 administrative access to perform various tasks. The sudo command requires a 
 password before the execution to verify the user’s authorization.
-56. What is umask?
+
+**56. What is umask?**
+
 It is used for user file creation mode. When a user creates any file, then it has default 
 file permission. Umask specifies restrictions for these permissions on the file, i.e., 
 controls the permissions.
-57. How to find and kill a process in Linux?
+
+**57. How to find and kill a process in Linux?**
+
 You can use different commands to kill a process, but first, you must find the PID of 
 that specific process. So, please run the below command:
+
 ps aux | grep <process>
+
 Once you get the PID of the process then run the kill command to end it:
+
 kill <PID>
+
 If you don’t want to find the PID, then you can use the pkill command to kill a process 
 by its name:
+
 pkill <process>
+
 The pkill command sends a signal (by default, SIGTERM) to the matched processes, 
 causing them to terminate.
-58. What is network bonding in Linux?
+
+**58. What is network bonding in Linux?**
+
 Network bonding is the process of creating a single network by combining two or more 
 network interfaces. This combination of networks improves redundancy and 
 performance by increasing bandwidth and throughput. The major benefit of network 
 bonding is that the overall network works fine even if a single network in the bonding 
 does not work properly.
-59. What is SELinux?
+
+**59. What is SELinux?**
+
 SELinux or also known as Security-Enhanced Linux, is the security framework. It 
 offers an additional layer of security to improve access control and strengthen security. 
 SELinux was developed to improve the security policies to prevent unauthorized 
 access and exploitation. However, learning about SELinux is essential before working 
 on it can create serious security issues.
-60. What is the purpose of the SSH protocol in Linux, and how do you 
-securely connect to a remote server using SSH?
+
+**60. What is the purpose of the SSH protocol in Linux, and how do you securely connect to a remote server using SSH?**
+
 The Secure Shell (SSH) is a protocol in Linux which is used to establish a secure 
 encrypted connection between a local and remote machine. It allows to securely 
 access and manage remote servers. If we want to connect to a remote server using 
 SSH. We can use the following command.
+
 ssh username@remote_ip
+
 Here replace the `username` with the desired username of the remote server and 
 replace the `remote_ip` with the IP address of the remote server.
-61. How do you check the contents of a file without opening it in 
-Linux?
+
+**61. How do you check the contents of a file without opening it in Linux?**
+
 In Linux we can use the `cat` command to view the content of a file without opening 
 it in an editor form.
+
 For example: If we want to check content of a file with file_name = `geeks.txt`
+
 cat geeks.txt
-62. What is the purpose of the crontab file in Linux, and how do you 
-schedule recurring tasks using cron jobs?
+
+**62. What is the purpose of the crontab file in Linux, and how do you  schedule recurring tasks using cron jobs?**
+
 The crontab file in Linux is used to schedule recurring tasks or cron jobs. It contains 
 a list of commands or scripts that are executed at specified time intervals. To edit the 
-crontab file, you can use the crontab -e command.
-For example: If we want to run a script name `jayesh.sh` every day at 5 AM, we can 
+crontab file, you can use the 
+
+crontab -e command.
+
+For example: If we want to run a script name `shree.sh` every day at 5 AM, we can 
 use the following procedure.
+
 First, we need to open the crontab in editorial format.
+
 crontab -e
+
 Secondly, add the entries in the crontab file.
-0 5 * * * /path/to/jayesh.sh
-63. How do you find and replace text in a file using the sed command 
-in Linux?
+
+0 5 * * * /path/to/shree.sh
+
+**63. How do you find and replace text in a file using the sed command in Linux?**
+
 The sed command (stream editor) can be used to find and replace text in a file. The 
 basic syntax is sed ‘s/pattern/replacement/g’ filename.
+
 For example: to replace all occurrences of “true” with “False” in a file
+
 sed 's/true/False/g' file_name
-64. What is the purpose of the sudoers file in Linux, and how do you 
-configure sudo access for users?
+
+**64. What is the purpose of the sudoers file in Linux, and how do you configure sudo access for users?**
+
 The sudoers file in Linux controls the sudo access permissions for users. It 
 determines which users are allowed to run commands with superuser (root) 
 privileges. To configure sudo access, you can edit the sudoers file using the visudo 
 command.
+
 For example:
+
 sudo visudo
+
 Now add this line anywhere in the file. For instance, if we want to grant a user full 
 sudo access.
+
 user_name ALL=(ALL) ALL
-65. How do you change the ownership of a file or directory in Linux 
-using the chown command?
+
+**65. How do you change the ownership of a file or directory in Linux using the chown command?**
+
 In Linux, you can change the ownership of a file or directory using the chown 
 command. The basic syntax is chown new_owner: new_group filename.
-For example: If we want to change the ownership of a file to user “Jayesh” and 
+
+For example: If we want to change the ownership of a file to user “shree” and 
 group “users”.
-chown jayesh:users file_name
-66. What is the purpose of the ping command in Linux, and how do 
-you test network connectivity to a remote host?
+
+chown shree:users file_name
+
+**66. What is the purpose of the ping command in Linux, and how do you test network connectivity to a remote host?**
+
 Ping command is used to test the network connectively between the local and 
 remote hosts. It basically sends an ICMP echo request packet to the remote host 
 and waits for the corresponding echo reply packet.
+
 For example: If we want to check the connectivity to a remote host, we use the 
 following command.
+
 ping remote_host_ip
+
 Here replace `remote_host_ip` with the Ip address of the host
-67. How do you recursively copy files and directories in Linux using 
-the cp command?
+
+**67. How do you recursively copy files and directories in Linux using the cp command?**
+
 In linxux we can simply use `-R` option with the `cp` command to recursively copy 
 the file and directories.
+
 For example:
+
 cp -R sourece_durectory destination_directory
-68. What is the purpose of the netstat command in Linux, and how do 
-you view network connections and listening ports?
+
+**68. What is the purpose of the netstat command in Linux, and how do you view network connections and listening ports?**
+
 The netstat command in Linux is used to display active network connections, routing 
 tables, and listening ports. To view network connections and listening ports, use the 
 netstat command with appropriate options.
+
 For example: If we want to display all listening TCP ports, we can use the following 
 command.
+
 netstat -tuln
-69. How do you set up a static IP address in Linux using the 
-command-line interface?
+
+**69. How do you set up a static IP address in Linux using the command-line interface?**
+
 To set up a static IP address in Linux using the command-line interface, you need to 
 modify the network configuration file. The location and name of the file may vary 
 depending on the Linux distribution, but commonly it is /etc/network/interfaces. Open 
 the file with a text editor and modify the configuration to set a static IP address, 
 subnet mask, gateway, and DNS servers.
+
 For example:
+
 iface eth0 inet static
+
 address 192.168.1.100
+
 netmask 255.255.255.0
+
 gateway 192.168.1.1
+
 dns-nameservers 8.8.8.8 8.8.4.4
+
 Save the file and restart the network service or reboot the system for the changes to 
 take effect.
-70. How to copy a file to multiple directories in Linux?
+
+**70. How to copy a file to multiple directories in Linux?**
+
 We can copy a file to multiple directories in Linuxby these methods and 
 command xargs, find, tee and shell loop.
+
 •xargs command on Unix/Linux operating system converts input from 
 standard input into an argument list for a specified command.
+
 •The command find initiates a search and allows actions to be performed 
 based on the search results.
+
 •The tee command reads standard input and copies it to both standard 
 outputs and to one or more files.
-Linux Admin Interview Questions
-71.How are files organized in Linux?
+
+## Linux Admin Interview Questions
+
+**71.How are files organized in Linux?**
+
 Linux follows a hierarchical file system structure. The root directory is denoted by “/”, 
 and files are organized in directories or folders within the root directory.
-72.How can you find the IP address of a Linux system?
+
+**72.How can you find the IP address of a Linux system?**
+
 The ‘ifconfig’ or ‘ip addr show’ command can be used to display the IP address of a 
 Linux system.
-73.What is the distinction between a hard link and a symbolic link in 
-Linux?
+
+**73.What is the distinction between a hard link and a symbolic link in Linux?**
+
 A hard link is a direct reference to a file, whereas a symbolic link is a reference to the 
 file’s path. Deleting a hard link does not affect the file, but deleting a symbolic link 
 breaks the link between the file and its path.
-74.How do you check the amount of disk space being used in Linux?
+
+**74.How do you check the amount of disk space being used in Linux?**
+
 The ‘df’ command displays information about the disk space usage on Linux, 
 including the total, used, and available space on filesystems.
-75.How do you start and stop a service in Linux?
+
+**75.How do you start and stop a service in Linux?**
+
 The ‘systemctl start <service>’ command is used to start a service, and ‘systemctl 
 stop <service>’ is used to stop a service in Linux.
-76.What are common causes of file permission issues in Linux?
+
+**76.What are common causes of file permission issues in Linux?**
+
 Common causes of file permission issues in Linux include incorrect ownership, 
 improper permissions set for users or groups, and conflicts between different users’ 
 permissions.
-77.How do you troubleshoot a Linux system that cannot connect to a 
-remote server?
+
+**77.How do you troubleshoot a Linux system that cannot connect to a remote server?**
+
 Possible troubleshooting steps include checking network connectivity using tools like 
 ‘ping’, verifying firewall rules, checking DNS settings, and examining relevant log 
 files for error messages.
-Linux Troubleshooting Interview Questions:
-78.What steps would you take to fix a network connectivity issue in 
-Linux?
+
+## Linux Troubleshooting Interview Questions:
+
+**78.What steps would you take to fix a network connectivity issue in Linux?**
+
 Steps would include checking physical connections, verifying IP configuration, 
 checking firewall settings, ensuring DNS resolution is working, and using network 
 troubleshooting tools like ‘ping’, ‘traceroute’, or ‘tcpdump’.
-79.How do you check the system logs in Linux?
+
+**79.How do you check the system logs in Linux?**
+
 System logs can be checked using the ‘tail’ or ‘less’ command to view the contents 
 of log files located in the ‘/var/log’ directory, such as ‘syslog’, ‘messages’, or 
 ‘auth.log’.
-80.What are the possible reasons for a Linux system running out of 
-memory?
+
+**80.What are the possible reasons for a Linux system running out of memory?**
+
 Possible reasons include memory leaks in applications, excessive memory usage by 
 running processes, inadequate memory allocation, or high memory demands from 
 large datasets.
-81.How would you troubleshoot a slow-performing Linux server?
+
+**81.How would you troubleshoot a slow-performing Linux server?**
+
 Troubleshooting steps might involve checking system resource usage with tools like 
 ‘top’ or ‘htop’, monitoring disk I/O, analyzing network traffic, identifying memory or 
 CPU bottlenecks, and reviewing application logs.
-82.What are common causes of a Linux system running out of disk 
-space?
+
+**82.What are common causes of a Linux system running out of disk space?**
+
 Common causes include large log files, excessive data storage, uncontrolled growth 
 of temporary files, improper cleanup of old files, or runaway processes generating 
 excessive output.
-83.How can you identify and terminate a process that is using a lot of 
-CPU in Linux?
+
+**83.How can you identify and terminate a process that is using a lot of CPU in Linux?**
+
 The ‘top’ or ‘htop’ command can display the processes using the most CPU. To 
 terminate a process, the ‘kill’ command followed by the process ID (PID) can be 
 used.
-84.How would you troubleshoot a Linux system that cannot boot up?
+
+**84.How would you troubleshoot a Linux system that cannot boot up?**
+
 Troubleshooting steps might include checking hardware connections, verifying 
 BIOS/UEFI settings, booting into a recovery mode or live system, analyzing boot 
 logs, and diagnosing disk or file system errors.
-Linux Networking Interview Questions:
-85.What does the ‘ifconfig’ command do in Linux?
+
+## Linux Networking Interview Questions:
+
+**85.What does the ‘ifconfig’ command do in Linux?**
+
 The ‘ifconfig’ command is used to configure or display network interfaces in Linux. It 
 can be used to view or modify IP addresses, netmasks, and other network interface 
 parameters.
-86.How do you set up a fixed IP address in Linux?
+
+**86.How do you set up a fixed IP address in Linux?**
+
 A fixed IP address can be set up in Linux by editing the network configuration file 
 (e.g., ‘/etc/network/interfaces’ or ‘/etc/sysconfig/network-scripts/ifcfg-<interface>’) 
 and assigning the desired IP address to the interface.
-87.How do you configure a DNS server in Linux?
+
+**87.How do you configure a DNS server in Linux?**
+
 DNS server configuration involves editing the ‘/etc/named.conf’ (BIND) or 
 ‘/etc/named/named.conf.options’ (ISC BIND) file to specify the server’s zone 
 information, name resolution options, and defining forwarders or root hints.
-88.What is a firewall in Linux, and how do you set it up?
+
+**88.What is a firewall in Linux, and how do you set it up?**
+
 A firewall is a network security system that filters and controls network traffic. In 
 Linux, ‘iptables’ or newer ‘nftables’ can be used to set up firewall rules by defining 
 filtering criteria, network zones, and desired actions.
-89.How do you check the network connectivity between two Linux 
-systems?
+
+**89.How do you check the network connectivity between two Linux systems?**
+
 Network connectivity between two Linux systems can be checked using tools like 
 ‘ping’ or ‘traceroute’, which send packets to the target system and report on the 
 round-trip time and the path taken.
-90.What is the purpose of the ‘route’ command in Linux?
+
+**90.What is the purpose of the ‘route’ command in Linux?**
+
 The ‘route’ command is used to view or modify the IP routing table on a Linux 
 system. It displays information about the network routes and allows adding or 
 deleting routes.
-91.How do you configure a Linux system to act as a router?
+
+**91.How do you configure a Linux system to act as a router?**
 To configure a Linux system as a router, IP forwarding must be enabled by setting 
 the appropriate value in the ‘/proc/sys/net/ipv4/ip_forward’ file. Additionally, network 
 interfaces and routing tables need to be configured accordingly.
