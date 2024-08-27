@@ -252,221 +252,332 @@ the complete resource usage.
 displays the color-coded list with additional features such as sorting, 
 filtering, sorting, etc.
 
-20. What is the chmod command in Linux, and how do you use it?
+**19. What is the chmod command in Linux, and how do you use it?**
+
 You can use the chmod command to change the file permissions of the directories. It 
 offers a simple way to control the read and write permissions. For instance, if you want 
 to change the permission of the ABC.sh script and give it the write and executable 
 permission, you can run the below command:
+
 chmod u+wx ABC.sh
+
 The chmod command is not limited to the write (w), read (r), and executable (x) 
 permissions because there are symbolic modes and numeric modes.
-21. How do you check disk space usage?
+
+**20. How do you check disk space usage?**
+
 There are some simple commands you can use to check disk space usage, such as:
+
 df Command:
+
 The df or disk-free command shows the used and the available disk space. You can 
 use the additional options to check disk space differently. For instance, you can use 
 the df -h command to check the disk usage in the human-readable format.
+
 du Command:
+
 The du or disk usage command estimates and shows the disk space usage, so 
 running the du command with no option shows the disk usage of your current directory. 
 However, you can run the following command to check the disk usage of a specific 
 directory:
+
 du -sh ~/<directory> 
+
 ncdu Command:
+
 The NCurses Disk Usage, or ncdu command, displays more interactive disk usage. 
 Similar to the du command, the ncdu command also requires the path of the specific 
 directory to check its space.
-22. How do you find the process ID (PID) of a running process?
+
+**21. How do you find the process ID (PID) of a running process?**
+
 You can use the following command to find the Process ID or PID of the currently 
 running process:
+
 pgrep Command:
+
 The pgrep command shows the PID of a process through its name or other different 
 attributes. For example, you can find the PID of process_1 using the below command:
+
 pgrep <process_1>
+
 ps Command:
+
 ps command not only displays the currently running process but also shows the 
 process’s PID. However, if you want to check the PID of a specific process, you can 
 combine the ps with the grep command:
+
 ps -e | grep -i <process_1> 
-23. What is the rsync command, and how do you use this command 
-for synchronization?
+
+**22. What is the rsync command, and how do you use this command for synchronization?**
+
 The rsync command is used to synchronize and transfer the files in Linux. It 
 synchronizes files between two local systems, directories, or a network. The basic 
 rsync command contains the following:
+
 rsync <options> <source> <destination>
+
 For example, let’s synchronize between Documents and the Downloads directory. For 
 this, you need to run the following command:
+
 rsync -av ~/Documents ~/Downloads
+
 If you want to go one step further, then you can use the below command:
+
 rsync -avz --delete ~/Documents ~/Downloads
+
 In the above command:
+
 •The -a option preserves all the permissions and other attributes
+
 •The -v option displays the detailed output of the synchronization
+
 •The -z allows compression that decreases the bandwidth use.
+
 •The –delete option removes the file in the Downloads that do not exist in the 
 Documents directory.
-24. How do you create a user account?
+
+**23. How do you create a user account?**
+
 You can use adduser and useradd commands to create a user for the system.
+
 useradd Command:
+
 Let’s create a username, “Ron,” and provide a password for accessing the system:
+
 useradd Ron 
+
 passwd Ron 
+
 You can also explore the useradd command’s additional options to modify the new 
 user’s permissions and privileges.
+
 adduser Command:
+
 The adduser command is similar to the useradd command, so let’s create a username 
 “Shawn”:
+
 adduser Shawn
+
 passwd Shawn
-25. How do you format a disk in Linux?
+
+**24. How do you format a disk in Linux?**
+
 The mkfs or make file system command helps format the disk in the Linux system. All 
 you need to do is use the following method to format the disk:
+
 First, run the lsblk command to list the available partitions and identify which disk you 
 want to format.
+
 If the selected disk is mounted, then unmount it through the following command:
 umount <partition>
+
 Now, find the file system type of the disk, like EXT4, NTFS, or XFS. Once you are 
 done then, run one of the following commands according to the file system type:
+
 mkfs.ext4 <partition>
+
 mkfs.xfs <partition>
+
 mkfs.ntfs <partition>
+
 Finally, mount the disk again through the mount command after the successful format. 
 Moreover, please ensure that you have created a complete disk backup to eliminate 
 the chances of data loss.
-26. How do you change the password for a user account?
+
+**25. How do you change the password for a user account?**
+
 Changing the password of a user account is simple because all you need to do is use 
+
 the passwd command:
+
 passwd username 
+
 For example, let’s change the password of a user “Ron” through the below command:
+
 passwd Ron 
+
 Once you run the command, the system will ask you to enter and confirm the new 
 password.
-27. What is the difference between a process and a thread?
-In Linux, processes are the independent program, while a thread is the unit of 
-execution. So here are the complete differences between process and thread:
-Comparison 
-Factors Process Thread
-Creation time Creation time is higher Creation time is less.
-Dependency It is independent because 
-it does not share memory.
-It depends on other threads 
-because they share some memory 
-with other threads.
-Resource Resource use is higher Requires lesser resources
-Termination 
-time
-The termination time is 
-higher The termination time is less.
-28. What is the ulimit command, and how do you use it?
+
+**26. What is the difference between a process and a thread?**
+
+Here is the table that shows the difference between processes and threads:
+
+| **Comparison Factors** | **Process**                                                 | **Thread**                                                |
+|------------------------|-------------------------------------------------------------|-----------------------------------------------------------|
+| **Creation Time**      | Creation time is higher                                     | Creation time is less.                                    |
+| **Dependency**         | It is independent because it does not share memory.         | It depends on other threads because they share some memory with other threads. |
+| **Resource Usage**     | Resource use is higher                                      | Requires lesser resources.                                |
+| **Termination Time**   | The termination time is higher                              | The termination time is less.                             |
+
+**27. What is the ulimit command, and how do you use it?**
+
 The ulimit command controls the resource limit for the user process. You can use 
 the ulimit command to set the limit on the system resource to prevent consuming the 
 higher resources. This command contains multiple options to set the limit. For 
 example, you can use the u option to set a maximum number of processes to 50:
+
 ulimit -u 50 
+
 You can explore more options of the ulimit command.
-29. What is the find command, and how do you use it?
+
+**28. What is the find command, and how do you use it?**
+
 The find command searches for files based on different factors such as name, size, 
 permissions, etc. Here is the basic command:
+
 find <directory> <file>
+
 For example, let’s find a Linux.txt file located in the Downloads directory through the 
 below command:
+
 find ~/Downloads -name Linux.txt
+
 Once you run the above command, the find command will start finding the Linux.txt in 
 the Downloads directory and subdirectories.
-30. What is RAID in Linux?
+
+**29. What is RAID in Linux?**
+
 The full form of RAID is the Redundant Array of Independent Disk that allows the 
 system to combine the different physical disk drives into a logical unit. RAID is used 
 to improve the system’s disk performance and data integrity. There are different RAID 
 levels you can configure according to the requirements. Here is the detailed 
-information about the RAID levels:
-RAID 
-Level Description
-RAID 0 It is called striping, which allows you to split the data into multiple disks 
-without redundancy.
-RAID 1 It is called mirroring, which allows you to create a complete copy of 
-data on multiple disks.
-RAID 5 It distributes the parity information and data on multiple disks.
-RAID 6 It is the improved version of RAID 5 as it uses two sets of parity 
-information to provide higher data redundancy.
-RAID 10 It combines RAID 0 and RAID 1 to generate the set of mirror disks to 
-improve performance and redundancy.
-31. What are the challenges of using Linux?
+
+Here is the information about RAID levels in table format:
+
+| **RAID Level** | **Description**                                                                                                                                         |
+|----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **RAID 0**     | It is called striping, which allows you to split the data into multiple disks without redundancy.                                                       |
+| **RAID 1**     | It is called mirroring, which allows you to create a complete copy of data on multiple disks.                                                           |
+| **RAID 5**     | It distributes the parity information and data on multiple disks.                                                                                       |
+| **RAID 6**     | It is the improved version of RAID 5 as it uses two sets of parity information to provide higher data redundancy.                                       |
+| **RAID 10**    | It combines RAID 0 and RAID 1 to generate the set of mirror disks to improve performance and redundancy.                                                |
+
+**30. What are the challenges of using Linux?**
+
 There are numerous challenges that a user faces while using Linux:
+
 •Linux shows hardware compatibility issues in certain devices because 
 manufacturers prioritize Windows compatibility.
+
 •Learning Linux is not easy because the configuration and commands require 
 proper knowledge.
+
 •Although Linux supports Steam, it still needs to be impressed regarding game 
 compatibility and availability.
+
 •Sometimes users face driver and firmware-related issues.
-Advanced-Level Linux Interview Questions
+
+## Advanced-Level Linux Interview Questions
+
 These 15 questions will revolve around your experience and help you in preparing for 
 the advanced-level Linux interview:
-32. What is the /proc file system?
+
+**31. What is the /proc file system?**
+
 /proc (Proc File System) is the virtual file system that shows information about the 
 system and the Kernel data structures. It is the essential interface to access the 
 system, perform debugging tasks, check the Kernel functioning, find process-related 
 information, and many more.
+
 Therefore, you can use /proc file system in Linuxto get information about the system 
 and modify the particular Kernel parameters at the runtime.
-33. How do you secure a Linux server?
+
+**32. How do you secure a Linux server?**
+
 There are multiple methods to secure the Linux server and protect it from data 
 breaches, security threats, and unauthorized access. Here are some of these 
 methods:
+
 •Create a strong password
+
 •Update the server and apply security patches.
+
 •Use secured protocols like SSH and configure it to use key-based 
 authentication for higher security.
+
 •Use the intrusion detection system (IDS) to monitor network traffic and 
 prevent malicious activities.
+
 •Configure the firewall to limit the inbound and outbound traffic on the server.
+
 •Disable all unused network services.
+
 •Create regular backups.
+
 •Review logs and perform regular security audits.
+
 •Encrypt network traffic and enable monitoring.
-34. What is strace command?
+
+**33. What is strace command?**
+
 The strace command is the diagnostic utility by which you can trace and monitor the 
 system calls generated by the process. It allows you to find how programs interact with 
 Kernel and can be used for debugging and troubleshooting. For example, let’s find the 
 system calls generated by the ls command:
+
 strace ls
+
 Once you run the above command, the system will start tracing the list command and 
 show the system calls generated by it. Output from the above command includes 
 information like call name, argument, and return values.
-35. How do you optimize Linux system performance?
+
+**34. How do you optimize Linux system performance?**
+
 You can optimize the Linux performance through various strategies to improve 
 resource usage and efficiency. So some of the strategies are:
+
 •Updates the system as per the latest one available.
+
 •Optimize the disk, enable the caching, and optimize the access pattern.
+
 •Manage memory and CPU usage.
+
 •Disable the necessary services and use lightweight alternatives of the tools.
+
 •Monitor the system resources regularly.
+
 •Perform the Kernel parameter tune-up.
+
 •Use tools like Performance Co-Pilot (PCP) to monitor system-level 
 performance.
-36. How to administer Linux servers?
+
+**35. How to administer Linux servers?**
+
 Administering a Linux server requires different strategies and management to 
 maintain the overall functionalities. Here are some major strategies you can follow:
+
 •Handle user account management and assign appropriate access 
 permissions.
+
 •Configure the system to optimize the performance, improve the security and 
 maintain the network connectivity.
+
 • Implement the backup strategy to perform regular backups of the server.
+
 • Implement the monitoring tools to track resource usage, system performance, 
 and network.
+
 •Set up monitoring tools to track system performance, resource usage, and 
 network activity.
+
 •Configure firewall, set up intrusion detection, manage user permissions and 
 configure the SSH.
+
 •Create a proper recovery planning that must include regular backup, critical 
 configuration documentation, recovery process testing, and offsite storage.
-37. What is a Linux virtual memory system?
+
+**36. What is a Linux virtual memory system?**
+
 Virtual memory is a great memory management utility in any OS. You can use the 
 virtual memory system as secondary memory. This memory is used by both software 
 and hardware in Linux so that your system can cope with the lack of physical memory. 
 Moreover, virtual memory is also used to compensate for the RAM usage by 
 transferring the data temporarily from RAM to disk storage.
-38. What do you understand about process scheduling in Linux?
+
+**37. What do you understand about process scheduling in Linux?**
+
 Process scheduling is the mechanism that identifies the order of processes running 
 on the system. In other words, process schedulingdetermines the order and 
 execution time of multiple processes running on the system concurrently. This process 
@@ -474,66 +585,106 @@ scheduler of Linux is priority-based and uses a preemptive algorithm. It allocat
 time for different processes to ensure efficient CPU resource usage. These 
 processes are dynamic, and their order can change depending on many factors, such 
 as resource usage, process behavior, and scheduling policies.
-39. What are the most important Linux commands?
+
+**38. What are the most important Linux commands?**
+
 There are a ton of useful commands in Linux, and here are some of the commonly 
 used commands:
+
 • ls: Display directory contents such as folders and files.
+
 •mkdir: Used to create a new directory.
+
 •pwd: Shows the current directory.
+
 • top: Display system running processes and resource usage.
+
 •grep: Search a specific pattern in a file.
+
 •cat: Through this command, users can add multiple files and also display the 
 content of the files.
+
 • tar: Archives directories and files into a tarball.
+
 •wget: Download files from the browser or web.
+
 • free: Shows memory usage.
+
 •df: Shows disk space usage.
+
 •man: Gives a manual page for a specific command that displays instructions 
 and details.
-40. What is the iptables command, and how to use it for network 
-filtering?
+
+**39. What is the iptables command, and how to use it for network filtering?**
+
 The iptables command configures Netfilter firewall rules providing the network 
 address translation, packet filtering, etc. iptables inspects the network packet and 
 then manages them according to the defined rules. Here is how you can use the 
 iptables command for network filtering:
+
 Run the below command to display the current iptables rules, including policies, 
 chains, and other actions for the network:
+
 iptables -L
+
 The iptables configuration uses the predefined set of chains to process the network 
 packages at different stages. So you can define rules to these chains for 
 manipulating the network packets:
+
 iptables -A <chain> <options> -j <target>
+
 In the above command:
+
 •<chain>: Specifies the chain where you want to define a new rule.
+
 •<options>: Defines the conditions for the rule, like ports, protocols, etc.
+
 • -j <target>: Defines the target action when the packet matches the rule.
+
 By default, iptables rules get automatically removed after the system reboot, but you 
 can use the following command to make the rules persistent:
+
 iptables-save > /etc/iptables/rules.v4
-41. How do you troubleshoot a Linux OS that fails to boot?
+
+**40. How do you troubleshoot a Linux OS that fails to boot?**
+
 In case of the system boot failure, you can follow various approaches such as:
+
 •Check the warning and error messages you get during the boot process 
 because it can help you diagnose the issues.
+
 •Check the boot logs to find the exact reason behind the boot error.
+
 •Open the GRUB bootloader and check the boot options to solve the booting 
 problems.
+
 •Check the hardware connections like cables, RAM, cooling fan, etc.
+
 • If the system shows an error message related to the Kernel, try to boot it with 
 the older Kernel version from GRUB.
+
 • Identify the last changes you made in the system before the boot.
-42. What is the init process in Linux?
+
+**41. What is the init process in Linux?**
+
 The init or also called the initialization process is the first process that begins 
 during the system boot. It is responsible for initializing and processing the system in 
 its functional state. Hence, init works as the parent process because its process ID is 
 1. Originally Linux systems used to have SysV init, but now it is developed as the 
 systemd init (an improved version of SysV).
-42. What is SMTP?
+
+**42. What is SMTP?**
+
 SMTP stands for Simple Mail Transfer Protocol. This set of communication guidelines 
 allows the software to transmit electronic mail online. The main aim of SMTP is to set 
 communication rules between servers. There are two models of SMTP:
+
 •End-to-end model: This model is used to connect different organizations.
+
 •Store-and-forward model: This model is used within an organization.
-43. What is LVM in Linux?
+
+**43. What is LVM in Linux?**
+
 The full form of LVM is Logical Volume Manager, which provides an advanced disk 
 management approach in Linux. It is a subsystem that allows a user to efficiently 
 allocate the disk space on the physical storage device.
@@ -541,36 +692,19 @@ You can use the LVM to create the logical volume for easy storage
 management through various features like resizing, volume mirroring, and snapshots. 
 LVM is a powerful utility for disk management where you need dynamic storage 
 allocations.
-44. What is the difference between UDP and TCP?
+
+**44. What is the difference between UDP and TCP?**
 The following table shows the difference between UDP and TCP:
-Factors UDP TCP
-Connectionoriented
-UDP does not establish a 
-proper connection.
-TCP is connection-oriented 
-because it establishes a 
-connection between the sender 
-and receiver.
-Factors UDP TCP
-Reliability UDP does not provide a 
-reliability mechanism.
-It guarantees reliable data 
-delivery by retransmitting corrupt 
-packets or lost packets.
-Usage
-It is used in low overhead, 
-speed, and real-time 
-communication applications.
-It is used where ordered data is 
-delivered, and reliable data must 
-be delivered.
-Applications
-Video/voice conferencing, 
-DNS, online gaming, 
-streaming media, etc.
-File transfers, email, web 
-browsing, database transactions, 
-etc.
+
+
+| **Factors**           | **UDP**                                                                 | **TCP**                                                                                  |
+|-----------------------|-------------------------------------------------------------------------|------------------------------------------------------------------------------------------|
+| **Connection-oriented**| UDP does not establish a proper connection.                            | TCP is connection-oriented because it establishes a connection between the sender and receiver. |
+| **Reliability**        | UDP does not provide a reliability mechanism.                          | It guarantees reliable data delivery by retransmitting corrupt packets or lost packets.  |
+| **Usage**             | It is used in low overhead, speed, and real-time communication applications. | It is used where ordered data is delivered, and reliable data must be delivered.          |
+| **Applications**      | Video/voice conferencing, DNS, online gaming, streaming media, etc.     | File transfers, email, web browsing, database transactions, etc.                         |
+
+
 45. What is /etc/resolv.conf file
 The /etc/resolv.conf is the config file used for the DNS server resolution process. 
 This config file is used to specify the DNS server, set up the search directive for 
